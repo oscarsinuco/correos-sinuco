@@ -31,7 +31,8 @@ app.get('/correoPortafolio', (req, res) => {
             }) 
         } else { 
             res.json({
-                mensaje: "todo bien"
+                mensaje: "todo bien",
+                body: mailDetails
             })
         } 
     }); 
