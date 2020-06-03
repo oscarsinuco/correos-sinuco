@@ -43,20 +43,21 @@ app.post('/correoPortafolio', cors(corsOptions), (req, res) => {
         from: 'servicesinuco@gmail.com',
         to: `oscarsinuco@gmail.com`,
         subject: `Cliente interesado`,
-        html: `<b>Cliente: ${req.query.nombre} - ${req.query.correo}</b><br>
-            Ha escrito lo siguiente: <br>
-            ${req.query.mensaje}
+        html: `<h2>Cliente: ${req.query.nombre} - ${req.query.correo}</h2><br><br>
+            Ha escrito lo siguiente: <br><br>
+            <i>${req.query.mensaje}</i>
         `
     }
     mailTransporter.sendMail(mailDetails, function(err, data) { 
         if(err) { 
             res.json({
-                mensaje: "todo mal"
+                error: true,
+                mensaje: "No se ha podido contactar en estos momentos, intenta mas tarde."
             }) 
         } else { 
             res.json({
-                mensaje: "todo bien",
-                body: mailDetails
+                error: false,
+                mensaje: "Mensaje enviado exitosamente, en un momento me contactaré contigo."
             })
         } 
     }); 
