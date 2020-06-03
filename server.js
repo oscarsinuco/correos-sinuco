@@ -11,6 +11,7 @@ app.use(express.json())
 
 const allowedOrigins = [
     'https://oscarsinuco.github.io/',
+    'http://localhost:8100'
 ];
 
 // Reflect the origin if it's in the allowed list or not defined (cURL, Postman, etc.)
