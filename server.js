@@ -43,9 +43,9 @@ app.post('/correoPortafolio', cors(corsOptions), (req, res) => {
         from: 'servicesinuco@gmail.com',
         to: `oscarsinuco@gmail.com`,
         subject: `Cliente interesado`,
-        html: `<h2>Cliente: ${req.query.nombre} - ${req.query.correo}</h2><br><br>
+        html: `<h2>Cliente: ${req.query.nombre} - ${req.query.correo}</h2><br>
             Ha escrito lo siguiente: <br><br>
-            <i>${req.query.mensaje}</i>
+            <p>${req.query.mensaje}</p>
         `
     }
     mailTransporter.sendMail(mailDetails, function(err, data) { 
