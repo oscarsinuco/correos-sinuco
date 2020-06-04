@@ -32,7 +32,7 @@ let mailTransporter = nodemailer.createTransport({
     service: 'gmail',
     auth: {
         user: 'servicesinuco@gmail.com',
-        pass: 'oscar160499'
+        pass: '' // contraseña aquí
     }
 });
 
