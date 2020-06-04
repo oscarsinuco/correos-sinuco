@@ -10,7 +10,7 @@ app.use(express.json())
 
 
 const allowedOrigins = [
-    'https://oscarsinuco.github.io/',
+    'https://oscarsinuco.github.io',
     'http://localhost:8100'
 ];
 
